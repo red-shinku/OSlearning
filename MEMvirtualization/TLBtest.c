@@ -6,9 +6,10 @@
 #include <time.h>
 #include <stdatomic.h>
 #include <x86intrin.h>
+#include <stdarg.h>
 
 //disrupt array
-void shuffle(int *array, int size) {
+static void shuffle(int *array, int size) {
     srand((unsigned int)time(NULL));
 
     for (int i = size - 1; i > 0; i--) {
@@ -19,7 +20,12 @@ void shuffle(int *array, int size) {
     }
 }
 
-double tlb(int PAGENUMS, long TRYTIMES, float CPU_MHz){
+//linux : get your system's page size
+long get_page_size(){
+    return sysconf(_SC_PAGESIZE);
+}
+
+double tlb(long USE_MEM, int PAGENUMS, long PAGE_SIZE, long TRYTIMES, float CPU_MHz){
 
     //make sure work on the same cpu
     cpu_set_t cpuset;
@@ -27,28 +33,53 @@ double tlb(int PAGENUMS, long TRYTIMES, float CPU_MHz){
     CPU_SET(0, &cpuset);
     sched_setaffinity(0, sizeof(cpuset), &cpuset);
 
-    //linux : get your system's page size
-    long PAGE_SIZE = sysconf(_SC_PAGESIZE);
-
     int jump = PAGE_SIZE/sizeof(int);
-    int *index = (int*)malloc(PAGENUMS * sizeof(int));
-    int *arr = (int*)malloc(PAGENUMS * jump * sizeof(int));
-    if(arr == NULL){
-        perror("failed to malloc array");
-        return -1;
+    int *index = NULL;
+    int *arr = NULL;
+
+    //init index[] and arr[]
+    if(USE_MEM > PAGENUMS * PAGE_SIZE){
+        index = (int*)malloc(USE_MEM / PAGE_SIZE * sizeof(int));
+        arr = (int*)malloc(USE_MEM);
+
+        if(arr == NULL || index == NULL){
+            perror("failed to malloc array");
+            return -1;
+        }
+
+        for(int i=0; i < USE_MEM / sizeof(int); i += jump){
+            arr[i] = i;
+        }
+            //use index[] to visit arr randomly
+        index[0] = 0;
+        for(int i=1; i < USE_MEM / PAGE_SIZE; ++i){
+            index[i] = index[i-1] + jump;
+        }
+
+        shuffle(index, USE_MEM / PAGE_SIZE);
+
+    }else{
+        index = (int*)malloc(PAGENUMS * sizeof(int));
+        arr = (int*)malloc(PAGENUMS * PAGE_SIZE);
+
+        if(arr == NULL || index == NULL){
+            perror("failed to malloc array");
+            return -1;
+        }
+
+        //memset(arr, 0, PAGENUMS * jump);
+        for(int i=0; i < PAGENUMS * jump; i += jump){
+            arr[i] = i;
+        }
+            //use index[] to visit arr randomly
+        index[0] = 0;
+        for(int i=1; i < PAGENUMS; ++i){
+            index[i] = index[i-1] + jump;
+        }
+
+        shuffle(index, PAGENUMS);
     }
 
-    //memset(arr, 0, PAGENUMS * jump);
-    for(int i=0; i < PAGENUMS * jump; i += jump){
-        arr[i] = i;
-    }
-        //use index[] to visit arr randomly
-    index[0] = 0;
-    for(int i=1; i < PAGENUMS; ++i){
-        index[i] = index[i-1] + jump;
-    }
-
-    shuffle(index, PAGENUMS);
 
     //test empty visit
     double emvisit_time;
