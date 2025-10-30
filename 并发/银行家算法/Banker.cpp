@@ -1,5 +1,21 @@
 #include "Banker.hpp"
 
+Banker::Banker(
+    int thread_nums,
+    int src_nums,
+    std::vector<std::vector<int>> &threads
+):
+    total_src(src_nums),
+    available_src(src_nums),
+    detailsQueue(cmp_func)
+{
+    for(auto thread: threads)
+    {
+        PID_func_details[thread[0]].max_request = thread[1];
+        detailsQueue.push(thread[0]);
+    }
+}
+
 bool Banker::request(int PID, int need)
 {
     std::unique_lock<std::mutex> lock(mtx);
@@ -15,7 +31,10 @@ bool Banker::request(int PID, int need)
     }
     available_src -= need;
     details.now_have += need;
-    if(is_safe(PID))
+
+    //need heapify
+    
+    if(is_safe())
     {
         details.now_need = 0;
         return true;
@@ -28,7 +47,7 @@ bool Banker::request(int PID, int need)
     }
 }
 
-bool Banker::is_safe(int PID)
+bool Banker::is_safe()
 {
     int available = available_src;
     DetailsQueue pqueue(detailsQueue);
@@ -53,7 +72,7 @@ bool Banker::is_safe(int PID)
 void Banker::update_src(int PID, int nums = 0)
 {
     std::unique_lock<std::mutex> lock(mtx);
-    auto details = PID_func_details[PID];
+    auto &details = PID_func_details[PID];
     if(nums == 0)
     {
         available_src += details.now_have;
@@ -79,6 +98,8 @@ void Banker::add_thread(int PID, int max_request)
 
 bool Banker::test_and_remove()
 {
+    if(waitTORemove.size() == 0) return false;
+
     if(waitTORemove.top() != detailsQueue.top())
     {
         return false;

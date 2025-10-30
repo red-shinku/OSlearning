@@ -16,7 +16,12 @@
  *     now_need：该线程当前需要的资源
  */
 
-struct Details;
+struct Details
+{
+    int max_request;
+    int now_have;
+    int now_need;
+};
 
 /**
  * Banker类（死锁预防）
@@ -93,7 +98,7 @@ private:
     DetailsQueue detailsQueue;
     DetailsQueue waitTORemove;
 
-    bool is_safe(int PID);
+    bool is_safe();
     bool test_and_remove();
     void reset_each_now_have(std::vector<int>& have);
 
@@ -104,21 +109,6 @@ public:
     template<typename... K> void remove(K&&... PID);
 };
 
-Banker::Banker(
-    int thread_nums,
-    int src_nums,
-    std::vector<std::vector<int>> &threads
-):
-    total_src(src_nums),
-    available_src(src_nums),
-    detailsQueue(cmp_func)
-{
-    for(auto thread: threads)
-    {
-        PID_func_details.emplace(thread[0], thread[1]);
-        detailsQueue.push(thread[0]);
-    }
-}
 
 template<typename... K>
 void Banker::remove(K&&... PID)
@@ -134,11 +124,5 @@ void Banker::remove(K&&... PID)
     (remove_thread(PID), ...)
 }
 
-struct Details
-{
-    int max_request;
-    int now_have;
-    int now_need;
-};
 
 #endif //BANKER_H
