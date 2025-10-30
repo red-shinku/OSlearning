@@ -1,6 +1,7 @@
 #ifndef BANKER_H
 #define BANKER_H
 
+#include <algorithm>
 #include <vector>
 #include <map>
 #include <queue>
@@ -41,19 +42,13 @@ struct Details
  *     available_src：当前可用资源数
  *     PID_func_details：线程id到线程Details的映射
  *     cmp_func：可调用对象，用于优先队列的比较方法
- *     detailsQueue：实时维护的，线程资源信息的优先队列。
- *              内部存储的是线程id，通过map映射到相关数据结构
- *     waitTORemove：
- *           待删除PID队列，带优先级。辅助移除detailsQueue
- *           中的PID。
+ *     threadlist：
+ *           当前线程列表，存储线程ID
  * 
  * 成员函数：
  *     私有：
  *     is_safe(int PID)：
- *          检查分配资源后，线程是否安全
- *     test_and_remove(int PID)：
- *          检查待删队列内的PID是否能移除。若
- *          有实际数据位于映射表，则不能移除。                       
+ *          检查分配资源后，线程是否安全                      
  * 
  *     对外：
  *     request(int PID, int need)：
@@ -78,12 +73,7 @@ public:
     ~Banker() = default;
 
 private:
-    using DetailsQueue = 
-    std::priority_queue<
-        int, 
-        std::vector<int>,
-        std::function<bool(int, int)>
-    >;
+    using DetailsQueue = std::vector<int>;
 
     std::mutex mtx;
     int total_src;
@@ -91,22 +81,25 @@ private:
     std::map<int, Details> PID_func_details;
 
     std::function<bool(int, int)> cmp_func = 
-    [this](int PID1, int PID2) -> bool{
-        return PID_func_details[PID1].now_need < 
-            PID_func_details[PID2].now_need;
+    [this](const int& PID1, const int& PID2) -> bool{
+        auto &p1 = PID_func_details.at(PID1);
+        auto &p2 = PID_func_details.at(PID2); 
+        return p1.max_request - p1.now_have > 
+            p2.max_request - p2.now_have;
     };
-    DetailsQueue detailsQueue;
-    DetailsQueue waitTORemove;
+    DetailsQueue threadlist;
 
     bool is_safe();
-    bool test_and_remove();
-    void reset_each_now_have(std::vector<int>& have);
+    //bool test_and_remove();
 
 public:
     bool request(int PID, int need);
-    void update_src(int PID, int nums);
+    void update_src(int PID, int nums = 0);
     void add_thread(int PID, int max_request);
     template<typename... K> void remove(K&&... PID);
+
+    void set_details(std::vector<int>&, std::vector<int>&);
+    bool issafe() { return is_safe(); }
 };
 
 
@@ -116,12 +109,20 @@ void Banker::remove(K&&... PID)
     auto remove_thread = [&](auto&& pid){
         if(PID_func_details.count(pid) == 1)
         {
-            waitTORemove.push(pid);
+            threadlist.erase(
+                std::remove(
+                    threadlist.begin(),
+                    threadlist.end(),
+                    pid
+                ),
+                threadlist.end()
+            );
             PID_func_details.erase(pid);
         }
-    }
+    };
 
-    (remove_thread(PID), ...)
+    std::unique_lock<std::mutex> lock(mtx);
+    (remove_thread(PID), ...);
 }
 
 
