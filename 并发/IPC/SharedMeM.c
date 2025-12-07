@@ -24,17 +24,27 @@ void create_shmhead(void* pshm)
     }
 }
 
-void* shm_init()
+Shmem shm_init()
 {
     int fd = create_shm(SEM_T_NAME, 4096);
     void* pshm =  mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     create_shmhead(pshm);
-    return pshm;
+
+    Shmem shmem;
+    shmem.fd = fd;
+    shmem.pshm = pshm;
+    return shmem;
 }
 
-int open_shm(const char* _key)
+Shmem open_shm(const char* _key)
 {
-    return shm_open(_key, O_CREAT | O_RDWR, 0666);
+    int fd = shm_open(_key, O_CREAT | O_RDWR, 0666);
+    void* pshm = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+
+    Shmem shmem;
+    shmem.fd = fd;
+    shmem.pshm = pshm;
+    return shmem;
 }
 
 //读者写者各有一把锁，且都交由对方控制。

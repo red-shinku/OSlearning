@@ -8,12 +8,12 @@
 #define SEM_T_NAME "/mysem"  
 #define MAX_BLOCKS 16  //max num of entries in ShmHead catalogue
 
+//FIXME: 记录共享内存大小，防止越界？
 typedef struct Shmem
 {
     int fd;
     void* pshm;
 }Shmem;
-
 
 typedef struct ShmHead
 {
@@ -28,8 +28,8 @@ typedef struct ShmHead
 
 int create_shm(const char* _key, off_t size);
 void create_shmhead(void* pshm);
-void* shm_init();
-int open_shm(const char* _key);
+Shmem shm_init();
+Shmem open_shm(const char* _key);
 void will_read(void* pshm);
 void finish_read(void* pshm);
 void will_write(void* pshm);
