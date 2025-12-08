@@ -64,6 +64,7 @@ void Chat::read()
         will_read(pshm);
         std::cout << *pint << std::endl;
         finish_read(pshm);
+        sleep(1);
     }
 }
 
