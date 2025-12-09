@@ -29,14 +29,14 @@ Chat::~Chat()
     munmap(pshm, 4096);
     close(fd);
     if(mode == 'w')
-    shm_unlink(SEM_T_NAME);
+        shm_unlink(Shm_T_NAME);
 }
 
 void Chat::run()
 {
     std::cin >> mode;
     openshm();
-    pint = (int*)(pshm + sizeof(ShmHead));
+    pint = (int*)((char*)pshm + sizeof(ShmHead));
     if(mode == 'w')
         write();
     else if(mode == 'r')
@@ -78,7 +78,7 @@ void Chat::openshm()
     }
     else if(mode == 'r')
     {
-        auto shmem = open_shm(SEM_T_NAME); 
+        auto shmem = open_shm(Shm_T_NAME); 
         fd = shmem.fd;
         pshm = shmem.pshm;
     }

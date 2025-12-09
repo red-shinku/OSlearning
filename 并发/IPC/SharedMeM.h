@@ -4,8 +4,17 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <stdalign.h>
 
-#define SEM_T_NAME "/mysem"  
+#ifdef __cplusplus
+    #define _ALIGNAS(x) alignas(x)
+    #define _ALIGNOF(x) alignof(x)
+#else
+    #define _ALIGNAS(x) _Alignas(x)
+    #define _ALIGNOF(x) _Alignof(x)
+#endif
+
+#define Shm_T_NAME "/myshm"  
 #define MAX_BLOCKS 16  //max num of entries in ShmHead catalogue
 
 //FIXME: 记录共享内存大小，防止越界？
@@ -17,10 +26,10 @@ typedef struct Shmem
 
 typedef struct ShmHead
 {
-    pthread_mutex_t rlock;
-    pthread_mutex_t wlock;
-    sem_t *rmtx;
-    sem_t *wmtx;
+    _ALIGNAS(_ALIGNOF(pthread_mutex_t)) pthread_mutex_t rlock;
+    _ALIGNAS(_ALIGNOF(pthread_mutex_t)) pthread_mutex_t wlock;
+    _ALIGNAS(_ALIGNOF(sem_t)) sem_t rmtx;
+    _ALIGNAS(_ALIGNOF(sem_t)) sem_t wmtx;
     int writers;
     int readers;
     int offsets[MAX_BLOCKS];
