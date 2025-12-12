@@ -4,7 +4,7 @@
 class Chat
 {
 public:
-    Chat();
+    Chat(char mode);
     ~Chat();
 
     void run();
@@ -20,8 +20,8 @@ private:
     void openshm();
 };
 
-Chat::Chat():
-pshm(NULL), pint(NULL)
+Chat::Chat(char mode):
+mode(mode), pshm(NULL), pint(NULL)
 { }
 
 Chat::~Chat()
@@ -34,7 +34,6 @@ Chat::~Chat()
 
 void Chat::run()
 {
-    std::cin >> mode;
     openshm();
     pint = (int*)((char*)pshm + sizeof(ShmHead));
     if(mode == 'w')
@@ -84,8 +83,9 @@ void Chat::openshm()
     }
 }
 
-int main()
+int main(int args, char* argc[])
 {
-    Chat chat;
+    char mode = argc[1][0];
+    Chat chat(mode);
     chat.run();
 }
