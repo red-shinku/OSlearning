@@ -13,8 +13,10 @@ void create_shmhead(void* pshm)
     ShmHead* pshmhead = (ShmHead*)pshm;
     pthread_mutex_init(&pshmhead->rlock, NULL);
     pthread_mutex_init(&pshmhead->wlock, NULL);
-    pshmhead->rmtx = sem_open(SEM_T_NAME, O_CREAT, 0666, 1);
-    pshmhead->wmtx = sem_open(SEM_T_NAME, O_CREAT, 0666, 0);
+    sem_init(&pshmhead->rmtx, 1, 1);
+    sem_init(&pshmhead->wmtx, 1, 1);
+    //pshmhead->rmtx = sem_open("/readmtx", O_CREAT, 0666, 1);
+    //pshmhead->wmtx = sem_open("/writemtx", O_CREAT, 0666, 1);
 
     pshmhead->writers = 0; //FIXME: or 1?
     pshmhead->readers = 0;
@@ -26,7 +28,7 @@ void create_shmhead(void* pshm)
 
 Shmem shm_init()
 {
-    int fd = create_shm(SEM_T_NAME, 4096);
+    int fd = create_shm(Shm_T_NAME, 4096);
     void* pshm =  mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     create_shmhead(pshm);
 
@@ -53,14 +55,13 @@ Shmem open_shm(const char* _key)
 void will_read(void* pshm)
 {
     ShmHead* pshmh = (ShmHead*)pshm;
-    sem_wait(read);
+    sem_wait(&pshmh->rmtx);
 
     ++pshmh->readers;
     if(pshmh->readers == 1);
         sem_wait(&pshmh->wmtx);
 
-    sem_post(read);
-    pthread_mutex_unlock(&pshmh->rlock);
+    sem_post(&pshmh->rmtx);
 }
 
 void finish_read(void* pshm)
