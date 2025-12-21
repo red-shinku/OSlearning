@@ -4,12 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include "src/stack.h"
-
-#define MEM_PAGE_NUMS 10
-#define container_of(ptr, type, member) ({ \
-    const typeof(((type *)0)->member ) *__mptr = (ptr); \
-    (type *)( (char *)__mptr - offsetof(type, member));})
+#include "../src/stack.h"
+#include "../src/tools.h"
 
 typedef struct Ipagenode
 {
@@ -27,8 +23,7 @@ typedef struct Ipages
 Ipages init_ipages(int pagenums);
 void use_page(Stack*, Ipages*, int need);
 static void swap_page(Stack*, Ipages* ipages, int need);
-void destroyipages(Ipages ipages);
-
-static void die(const char *fmt, ...);
+void destroyipages(Ipages* ipages);
+void print_LRU(Stack*, Ipages*);
 
 #endif //LRU_H

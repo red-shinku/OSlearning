@@ -1,10 +1,12 @@
 #ifndef PAGE_STACK_H
 #define PAGE_STACK_H
 
+#include "tools.h"
+
 typedef struct Stacknode
 {
-    Stacknode *prev;
-    Stacknode *next;
+    struct Stacknode *prev;
+    struct Stacknode *next;
 }Stacknode;
 
 typedef struct Stack

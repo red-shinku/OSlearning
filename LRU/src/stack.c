@@ -32,8 +32,7 @@ void settop(Stack* stack, Stacknode* node)
     {
         die("settop failed. when try to move a node doesnt in stack");
     }
-    node->prev->next = node->next;
-    node->next->prev = node->prev;
+    delnode(stack, node);
     push(stack, node);
 }
 

@@ -1,4 +1,4 @@
-#include "include/LRU.h"
+#include "../include/LRU.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -14,7 +14,6 @@ Ipages init_ipages(int pagenums)
         pages[i]->no = i;
         pages[i]->is_inmem = false;
     }
-
     Ipages ipages;
     ipages.pages = pages;
     ipages.size = pagenums;
@@ -60,20 +59,37 @@ void swap_page(Stack* stack, Ipages *ipages, int need)
     vpage->is_inmem = true;
 }
 
-void destroyipages(Ipages ipages)
+void destroyipages(Ipages* ipages)
 {
-    for(int i=0; i < ipages.size; ++i)
-        free(ipages.pages[i]);
+    for(int i=0; i < ipages->size; ++i)
+        free(ipages->pages[i]);
 
-    free(ipages.pages);
+    free(ipages->pages);
 }
 
-void die(const char *fmt, ...)
+void print_LRU(Stack* stack, Ipages* ipages)
 {
-	va_list argp;
-	va_start(argp, fmt);
-	vfprintf(stderr, fmt, argp);
-	va_end(argp);
-	fputc('\n', stderr);
-	exit(1);
+    //print page not in mem
+    printf("------------------------------------------------------------------------------");
+    printf("\nthose pages not in memory:\n");
+    Ipagenode** pages = ipages->pages;
+    for(int i=0; i < ipages->size; ++i)
+    {
+        if(pages[i]->is_inmem == false)
+            printf("%d ", pages[i]->no);
+    }
+    //print stack
+    printf("\nshow the stack:\n");
+    printf("|            |\n");    
+    Stacknode* top = stack->top;
+    Stacknode* snode = top->next;
+    while (snode != top)
+    {
+        Ipagenode* pgnode = container_of(snode, Ipagenode, node);
+        printf("|------------|\n");
+        printf("| pageno: %d  |\n", pgnode->no);
+        snode = snode->next;
+    }
+    printf("|____________|\n");
+    printf("which page will u use next: ");
 }
