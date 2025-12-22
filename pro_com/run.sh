@@ -7,11 +7,14 @@ free=1
 space=$bufsize
 data=0
 
-cat $free > ./resrc/free.sem
-cat $space > ./resrc/space.sem
-cat $data > ./resrc/data.sem
+echo $free > ./resrc/free.sem
+echo $space > ./resrc/space.sem
+echo $data > ./resrc/data.sem
 
+flag=0
+export flag
 ./bin/producer.sh a &
 ./bin/comsumer.sh &
 
+read flag
 wait

@@ -8,14 +8,17 @@ val="$1"
 function produce () {
     echo "[producer] i will produce $val";
     
-    ./_sem_wait_.sh "../resrc/space.sem";
-    ./_sem_wait_.sh "../resrc/free.sem";
+    bin/_sem_wait_.sh "resrc/space.sem";
+    bin/_sem_wait_.sh "resrc/free.sem";
 
-    echo "$val" > ../resrc/buffer.txt;
+    echo "$val" >> resrc/buffer.txt;
     echo "[producer] put $val";
 
-    ./_sem_post_.sh "../resrc/free.sem";
-    ./_sem_post_.sh "../resrc/data.sem";
+    bin/_sem_post_.sh "resrc/free.sem";
+    bin/_sem_post_.sh "resrc/data.sem";
 }
 
-produce
+while [ $flag -eq 0 ]; do
+    produce
+    sleep 1.5s
+done

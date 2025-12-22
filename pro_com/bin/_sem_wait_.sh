@@ -1,6 +1,6 @@
 #!/bin/bash
 # lock of the sem_wait
-lock_file="../resrc/lock";
+lock_file="resrc/lock";
 exec 4>"$lock_file";
 
 # function _sem_wait_ () {
@@ -30,6 +30,7 @@ function _sem_wait_ () {
         fi
         
         flock -u 4
+        sleep 0.1s
     done
 }
 

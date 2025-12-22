@@ -6,17 +6,20 @@
 function comsume(){
     echo "[comsumer] i will eat";
 
-    ./_sem_wait_.sh "../resrc/data.sem";
-    ./_sem_wait_.sh "../resrc/free.sem";
+    bin/_sem_wait_.sh "resrc/data.sem";
+    bin/_sem_wait_.sh "resrc/free.sem";
 
-    result=$(sed -n "1p" ../resrc/buffer.txt);
-    sed -i '1d' ../resrc/buffer.txt;
+    result=$(sed -n "1p" resrc/buffer.txt);
+    sed -i '1d' resrc/buffer.txt;
     echo "[comsumer] eat $result";
 
-    ./_sem_post_.sh "../resrc/free.sem";
-    ./_sem_post_.sh "../resrc/space.sem";
+    bin/_sem_post_.sh "resrc/free.sem";
+    bin/_sem_post_.sh "resrc/space.sem";
 
 }
 
-comsume
+while [ $flag -eq 0 ]; do
+    comsume
+    sleep 1.5s
+done
 

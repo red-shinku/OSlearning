@@ -1,6 +1,6 @@
 #!/bin/bash
 #lock of the sem_post
-lock_file="../resrc/lock";
+lock_file="resrc/lock";
 exec 4>"$lock_file";
 
 function _sem_post_(){
