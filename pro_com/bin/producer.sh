@@ -6,7 +6,7 @@
 val="$1"
 
 function produce () {
-    echo "[producer] i will produce $val";
+    # echo "[producer] i will produce $val";
     
     bin/_sem_wait_.sh "resrc/space.sem";
     bin/_sem_wait_.sh "resrc/free.sem";
@@ -18,7 +18,7 @@ function produce () {
     bin/_sem_post_.sh "resrc/data.sem";
 }
 
-while [ $flag -eq 0 ]; do
+while true; do
     produce
-    sleep 1.5s
+    sleep 0.1s
 done
