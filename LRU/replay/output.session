@@ -1,0 +1,337 @@
+Script started on 2025-12-21 21:51:41+08:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="156" LINES="47"]
+Welcome to fish, the friendly interactive shell
+Type [32mhelp(B[m for instructions on how to use fish
+]7;file://kotori/home/kktori/gitrep/myself/OSlearning/LRU]0;[kotori] ~/g/m/O/LRU[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/LRU[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=.[3C.[3C[90m/make.sh[30m(B[m[3C/[90mmake.sh[30m(B[m[4Cm[90make.sh[30m(B[m[5C[91m./m[90make.sh[30m(B[m[5C[91ma[90mke.sh[30m(B[m[6C[?2004l[>4;0m[=0u>./make.sh [12C[?2004h[>4;1m[=5u=[10D./make.sh [12C
+[30m(B[m]133;C;cmdline_url=./make.sh%20[?2004l[>4;0m[=0u>]0;[kotori] ./make.sh  ~/g/m/O/LRU[30m(B[mcompiling...
+finish! ---- ./LRUrun.exe
+]133;D;0[?25h[2m⏎(B[m                                                                                                                                                           ⏎ [K]0;[kotori] ~/g/m/O/LRU[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/LRU[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=l[3C[90ms[30m(B[m[3C[91ml[90ms[30m(B[m[3C[91ms[30m(B[m[4C[4Cls[4C[4C
+[30m(B[m]133;C;cmdline_url=ls[?2004l[>4;0m[=0u>]0;[kotori] ls ~/g/m/O/LRU[30m(B[m[0m[01;34minclude[0m/  [01;32mLRUrun.exe[0m*  main.c  [01;32mmake.sh[0m*  output.session  README.md  [01;34mreplay[0m/  [01;34msrc[0m/  timing.log
+]133;D;0[?25h[2m⏎(B[m                                                                                                                                                           ⏎ [K]0;[kotori] ~/g/m/O/LRU[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/LRU[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=.[3C[90m/make.sh[30m(B[m[3C.[90m/make.sh[30m(B[m[3C/[90mmake.sh[30m(B[m[4CL[K[5C[90mRUrun.exe[30m(B[m[5C[91m./L[90mRUrun.exe[30m(B[m[5C[?2004l[>4;0m[=0u>./LRUrun.exe [15C[?2004h[>4;1m[=5u=[13D./LRUrun.exe [15C
+[30m(B[m]133;C;cmdline_url=./LRUrun.exe%20[?2004l[>4;0m[=0u>]0;[kotori] ./LRUrun.exe  ~/g/m/O/LRU[30m(B[m------------------------------------------------------------------------------
+those pages not in memory:
+0 1 2 3 4 5 6 7 8 9 
+show the stack:
+|            |
+|____________|
+which page will u use next: 0
+------------------------------------------------------------------------------
+those pages not in memory:
+1 2 3 4 5 6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 1
+------------------------------------------------------------------------------
+those pages not in memory:
+2 3 4 5 6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 2
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 5 6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 3
+------------------------------------------------------------------------------
+those pages not in memory:
+4 5 6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 4
+------------------------------------------------------------------------------
+those pages not in memory:
+5 6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 5
+------------------------------------------------------------------------------
+those pages not in memory:
+6 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: 6
+------------------------------------------------------------------------------
+those pages not in memory:
+0 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 1  |
+|____________|
+which page will u use next: 1
+------------------------------------------------------------------------------
+those pages not in memory:
+0 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|____________|
+which page will u use next: 5
+------------------------------------------------------------------------------
+those pages not in memory:
+0 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|____________|
+which page will u use next: 6
+------------------------------------------------------------------------------
+those pages not in memory:
+0 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|------------|
+| pageno: 2  |
+|____________|
+which page will u use next: 2
+------------------------------------------------------------------------------
+those pages not in memory:
+0 7 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 4  |
+|------------|
+| pageno: 3  |
+|____________|
+which page will u use next: 7
+------------------------------------------------------------------------------
+those pages not in memory:
+0 3 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 4  |
+|____________|
+which page will u use next: 0
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 0  |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|____________|
+which page will u use next: 7
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 0  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|____________|
+which page will u use next: 1
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 0  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|____________|
+which page will u use next: 5
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 0  |
+|------------|
+| pageno: 2  |
+|------------|
+| pageno: 6  |
+|____________|
+which page will u use next: 6
+------------------------------------------------------------------------------
+those pages not in memory:
+3 4 8 9 
+show the stack:
+|            |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 0  |
+|------------|
+| pageno: 2  |
+|____________|
+which page will u use next: 8
+------------------------------------------------------------------------------
+those pages not in memory:
+2 3 4 9 
+show the stack:
+|            |
+|------------|
+| pageno: 8  |
+|------------|
+| pageno: 6  |
+|------------|
+| pageno: 5  |
+|------------|
+| pageno: 1  |
+|------------|
+| pageno: 7  |
+|------------|
+| pageno: 0  |
+|____________|
+which page will u use next: ^C]133;D;130[?25h[2m⏎(B[m                                                                                                                                                           ⏎ [K]0;[kotori] ~/g/m/O/LRU[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/LRU[95m (master)(B[m [91m[130](B[m
+[91m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=l[3C[90ms[30m(B[m[3C[91ml[90ms[30m(B[m[3C[91ms[30m(B[m[4C[4Cls[4C[4C
+[30m(B[m]133;C;cmdline_url=ls[?2004l[>4;0m[=0u>]0;[kotori] ls ~/g/m/O/LRU[30m(B[m[0m[01;34minclude[0m/  [01;32mLRUrun.exe[0m*  main.c  [01;32mmake.sh[0m*  output.session  README.md  [01;34mreplay[0m/  [01;34msrc[0m/  timing.log
+]133;D;0[?25h[2m⏎(B[m                                                                                                                                                           ⏎ [K]0;[kotori] ~/g/m/O/LRU[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/LRU[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=e[3C[90mxit[30m(B[m[3C[91me[90mxit[30m(B[m[3C[91mx[90mit[30m(B[m[4Cex[90mit[30m(B[m[4Ci[90mt[30m(B[m[5C[91mexi[90mt[30m(B[m[5C[91mt[30m(B[m[6C[6Cexit[6C[6C
+[30m(B[m]133;C;cmdline_url=exit[?2004l[>4;0m[=0u>]0;[kotori] exit ~/g/m/O/LRU[30m(B[m]133;D;0[?25h[30m(B[m
+Script done on 2025-12-21 21:52:41+08:00 [COMMAND_EXIT_CODE="0"]
