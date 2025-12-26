@@ -11,10 +11,13 @@ echo $free > ./resrc/free.sem
 echo $space > ./resrc/space.sem
 echo $data > ./resrc/data.sem
 
-flag=0
-export flag
 ./bin/producer.sh a &
+./bin/producer.sh b &
+./bin/producer.sh c &
+./bin/producer.sh d &
+./bin/comsumer.sh &
+./bin/comsumer.sh &
+./bin/comsumer.sh &
 ./bin/comsumer.sh &
 
-read flag
 wait
