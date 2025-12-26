@@ -1,0 +1,372 @@
+Script started on 2025-12-26 15:30:37+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="125" LINES="41"]
+Welcome to fish, the friendly interactive shell
+Type [32mhelp(B[m for instructions on how to use fish
+]7;file://kotori/home/kktori/gitrep/myself/OSlearning/pro_com]0;[kotori] ~/g/m/O/pro_com[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=.[3C.[3C[90m/clear.sh[30m(B[m[3C/[90mclear.sh[30m(B[m[4Cr[K[5C[90mun.sh > ./result/result.txt[30m(B[m[5C[91m./r[90mun.sh > ./result/result.txt[30m(B[m[5C[91mu[90mn.sh > ./result/result.txt[30m(B[m[6C[91mn[90m.sh > ./result/result.txt[30m(B[m[7C./run.sh > ./result/result.txt[32C[32C[30D./run.sh [36m[1m>(B[m [36m[1m./result/result.txt(B[m[32C[32C
+[30m(B[m]133;C;cmdline_url=./run.sh%20%3E%20./result/result.txt[?2004l[>4;0m[=0u>]0;[kotori] ./run.sh > ./result/ ~/g/m/O/pro_com[30m(B[m]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/pro_com[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=[?2004l[>4;0m[=0u>./run.sh > ./result/result.txt[32C[?2004h[>4;1m[=5u=[30D./run.sh [36m[1m>(B[m [36m[1m./result/result.txt(B[m[32C[?2004l[>4;0m[=0u>[30D[K[C[C[?2004h[>4;1m[=5u=c[3C[90md ..[30m(B[m[3C[91mc[90md ..[30m(B[m[3C[91md[90m ..[30m(B[m[4Ccd[90m ..[30m(B[m[4C [90m..[30m(B[m[5Cr[K[6C[90mesult/[30m(B[m[6C[36m[4mr[90m[24mesult/[30m(B[m[6C[36m[4me[90m[24msult/[30m(B[m[7C[?2004l[>4;0m[=0u>cd res[90mult/[30m(B[m
+[30m(B[m[1m[4mres(B[mrc/  [30m(B[m[1m[4mres(B[mult/[A[8C[?2004h[>4;1m[=5u=cd [36m[4mres[90m[24mult/[30m(B[m[8C[J[8C
+[30m(B[m]133;C;cmdline_url=cd%20res[?2004l[>4;0m[=0u>]0;[kotori] cd res ~/g/m/O/pro_com[30m(B[mcd：目录 “res” 不存在
+]133;D;1[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/pro_com[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com[95m (master)(B[m [91m[1](B[m
+[91m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[91mc[30m(B[m[3C[90md ..[30m(B[m[3C[91md[90m ..[30m(B[m[4Ccd[90m ..[30m(B[m[4C [90m..[30m(B[m[5Cr[K[6C[90mesult/[30m(B[m[6C[36m[4mr[90m[24mesult/[30m(B[m[6C[36m[4me[90m[24msult/[30m(B[m[7C[36m[4ms[90m[24mult/[30m(B[m[8Ccd result/[12C[12C[10Dcd [36m[4mresult/[30m(B[m[12C[12C
+[30m(B[m]133;C;cmdline_url=cd%20result/[?2004l[>4;0m[=0u>]0;[kotori] cd result/ ~/g/m/O/pro_com[30m(B[m]7;file://kotori/home/kktori/gitrep/myself/OSlearning/pro_com/result]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=l[3C[90ms[30m(B[m[3C[91ml[90ms[30m(B[m[3C[91ms[30m(B[m[4C[4Cls[4C[4C
+[30m(B[m]133;C;cmdline_url=ls[?2004l[>4;0m[=0u>]0;[kotori] ls ~/g/m/O/p/result[30m(B[mcom.txt  pro.txt  result.txt
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[91mc[30m(B[m[3C[90md ..[30m(B[m[3C[91ma[30m(B[m[K[4C[90mt result.txt[30m(B[m[4C[91mt[90m result.txt[30m(B[m[5Ccat[90m result.txt[30m(B[m[5C [90mresult.txt[30m(B[m[6Cr[90mesult.txt[30m(B[m[7C[36m[4mr[90m[24mesult.txt[30m(B[m[7C[36m[4me[90m[24msult.txt[30m(B[m[8C[36m[4ms[90m[24mult.txt[30m(B[m[9C[36m[4mu[90m[24mlt.txt[30m(B[m[10C[?2004l[>4;0m[=0u>cat result.txt [17C[?2004h[>4;1m[=5u=[90m| grep "producer" > pro.txt[30m(B[m[17C[15Dcat [36m[4mresult.txt[36m[24m [90m| grep "producer" > pro.txt[30m(B[m[17C[K[17C
+[30m(B[m]133;C;cmdline_url=cat%20result.txt%20[?2004l[>4;0m[=0u>]0;[kotori] cat result.txt  ~/g/m/O/p/result[30m(B[m[producer] put c
+[producer] put a
+[producer] put c
+[comsumer] eat c
+[comsumer] eat a
+[producer] put d
+[producer] put a
+[producer] put c
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat a
+[producer] put a
+[producer] put c
+[comsumer] eat c
+[comsumer] eat a
+[producer] put a
+[producer] put d
+[comsumer] eat c
+[producer] put b
+[comsumer] eat a
+[comsumer] eat d
+[producer] put c
+[producer] put b
+[producer] put a
+[comsumer] eat b
+[producer] put c
+[comsumer] eat c
+[comsumer] eat b
+[producer] put b
+[producer] put d
+[producer] put c
+[comsumer] eat a
+[comsumer] eat c
+[producer] put a
+[producer] put d
+[comsumer] eat b
+[comsumer] eat d
+[producer] put a
+[producer] put b
+[comsumer] eat c
+[producer] put c
+[producer] put d
+[comsumer] eat a
+[comsumer] eat d
+[producer] put a
+[comsumer] eat a
+[comsumer] eat b
+[producer] put c
+[producer] put b
+[producer] put a
+[comsumer] eat c
+[producer] put d
+[producer] put c
+[producer] put b
+[producer] put a
+[comsumer] eat d
+[producer] put d
+[producer] put b
+[comsumer] eat a
+[comsumer] eat c
+[producer] put d
+[comsumer] eat b
+[comsumer] eat a
+[producer] put a
+[producer] put b
+[comsumer] eat d
+[comsumer] eat c
+[producer] put d
+[producer] put b
+[comsumer] eat b
+[comsumer] eat a
+[producer] put d
+[comsumer] eat d
+[comsumer] eat b
+[producer] put c
+[comsumer] eat d
+[comsumer] eat a
+[producer] put b
+[producer] put a
+[comsumer] eat b
+[comsumer] eat d
+[producer] put d
+[comsumer] eat b
+[comsumer] eat d
+[producer] put b
+[producer] put a
+[producer] put c
+[comsumer] eat c
+[producer] put d
+[comsumer] eat b
+[comsumer] eat a
+[producer] put b
+[producer] put a
+[comsumer] eat d
+[comsumer] eat b
+[producer] put d
+[comsumer] eat a
+[comsumer] eat c
+[producer] put b
+[producer] put c
+[producer] put d
+[comsumer] eat d
+[producer] put a
+[producer] put b
+[producer] put c
+[producer] put d
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat d
+[producer] put a
+[comsumer] eat b
+[producer] put c
+[producer] put d
+[comsumer] eat c
+[comsumer] eat d
+[producer] put b
+[comsumer] eat a
+[comsumer] eat b
+[comsumer] eat c
+[producer] put b
+[producer] put c
+[producer] put a
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat c
+[producer] put c
+[producer] put a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat b
+[producer] put d
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat a
+[producer] put b
+[producer] put c
+[producer] put a
+[producer] put d
+[comsumer] eat d
+[producer] put c
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat a
+[producer] put a
+[producer] put d
+[comsumer] eat d
+[producer] put c
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[producer] put c
+[producer] put d
+[comsumer] eat c
+[comsumer] eat c
+[producer] put c
+[comsumer] eat d
+[producer] put b
+[producer] put a
+[producer] put c
+[comsumer] eat c
+[producer] put b
+[producer] put a
+[comsumer] eat b
+[comsumer] eat a
+[producer] put b
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[90mat result.txt[30m(B[m[3C[91mc[90mat result.txt[30m(B[m[3C[91ma[90mt result.txt[30m(B[m[4C[91mt[90m result.txt[30m(B[m[5Ccat[90m result.txt[30m(B[m[5C [90mresult.txt[30m(B[m[6Cr[90mesult.txt[30m(B[m[7C[36m[4mr[90m[24mesult.txt[30m(B[m[7C[36m[4me[90m[24msult.txt[30m(B[m[8C[36m[4ms[90m[24mult.txt[30m(B[m[9Ccat result.txt[16C[16C[14Dcat [36m[4mresult.txt[30m(B[m[16C[36m[4m [30m(B[m[17C[90m| grep "producer" > pro.txt[30m(B[m[17C[36m [90m| grep "producer" > pro.txt[30m(B[m[17C[15Dcat result.txt | grep "producer" > pro.txt[44C[44C[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"producer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[44C
+[30m(B[m]133;C;cmdline_url=cat%20result.txt%20%7C%20grep%20%22producer%22%20%3E%20pro.txt[?2004l[>4;0m[=0u>]0;[kotori] cat result.txt | gre ~/g/m/O/p/result[30m(B[m]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[90mat result.txt | grep "producer" > pro.txt[30m(B[m[3C[91mc[90mat result.txt | grep "producer" > pro.txt[30m(B[m[3C[91ma[90mt result.txt | grep "producer" > pro.txt[30m(B[m[4C[91mt[90m result.txt | grep "producer" > pro.txt[30m(B[m[5Ccat[90m result.txt | grep "producer" > pro.txt[30m(B[m[5C [90mresult.txt | grep "producer" > pro.txt[30m(B[m[6Ccat result.txt | grep "producer" > pro.txt[44C[44C[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"producer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[43C[43C[42C[41C[41C[40C[39C[39C[38C[38C[37C[37C[36C[36C[35C[35C[34C[34C[33C[33C[33m"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[32C[33m"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[31C[33m"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[30C[33m"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[29C[33m"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[28C[33m[4m"pro"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[28C[33m[4m"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[27C[33m[4m"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[26C[33m[4m"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[K[25C[33m""[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[25C[33mc"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[26C[33m[4m"c"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[26C[33m[4mo"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[27C[33m[4mm"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[28C[33m[4ms"[36m[24m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[29C[33m"coms"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[29C[33mu"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[30C[33mm"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[31C[33me"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[32C[33mr"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[33C[44C
+[30m(B[m]133;C;cmdline_url=cat%20result.txt%20%7C%20grep%20%22comsumer%22%20%3E%20pro.txt[?2004l[>4;0m[=0u>]0;[kotori] cat result.txt | gre ~/g/m/O/p/result[30m(B[m]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=[?2004l[>4;0m[=0u>cat result.txt | grep "comsumer" > pro.txt[44C[?2004h[>4;1m[=5u=[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"comsumer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[?2004l[>4;0m[=0u>[42Dcat result.txt | grep "producer" > pro.txt[44C[?2004h[>4;1m[=5u=[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"producer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[44C
+[30m(B[m]133;C;cmdline_url=cat%20result.txt%20%7C%20grep%20%22producer%22%20%3E%20pro.txt[?2004l[>4;0m[=0u>]0;[kotori] cat result.txt | gre ~/g/m/O/p/result[30m(B[m]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=[?2004l[>4;0m[=0u>cat result.txt | grep "producer" > pro.txt[44C[?2004h[>4;1m[=5u=[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"producer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[?2004l[>4;0m[=0u>[42Dcat result.txt | grep "comsumer" > pro.txt[44C[?2004h[>4;1m[=5u=[42Dcat [36m[4mresult.txt[36m[24m [32m|[36m [30m(B[mgrep [33m"comsumer"[36m [36m[1m>(B[m[36m [36m[1mpro.txt(B[m[44C[43C[43C[42C[42C[41C[41C[40C[40C[36m[1m.txt(B[m[K[39C[36m[1m.txt(B[m[K[38C[36m[1m.txt(B[m[K[37C[36mc[36m[1m.txt(B[m[38C[36m[1mc.txt(B[m[38C[36m[1mo.txt(B[m[39C[36m[1mm.txt(B[m[40C[41C[42C[43C[44C[90m [30m(B[m[44C[K[44C
+[30m(B[m]133;C;cmdline_url=cat%20result.txt%20%7C%20grep%20%22comsumer%22%20%3E%20com.txt[?2004l[>4;0m[=0u>]0;[kotori] cat result.txt | gre ~/g/m/O/p/result[30m(B[m]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=l[3C[90ms[30m(B[m[3C[91ml[90ms[30m(B[m[3C[91ms[30m(B[m[4C[4Cls[4C[4C
+[30m(B[m]133;C;cmdline_url=ls[?2004l[>4;0m[=0u>]0;[kotori] ls ~/g/m/O/p/result[30m(B[mcom.txt  pro.txt  result.txt
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[91mc[30m(B[m[3C[90mat result.txt | grep "comsumer" > com.txt[30m(B[m[3C[91ma[90mt result.txt | grep "comsumer" > com.txt[30m(B[m[4C[91mt[90m result.txt | grep "comsumer" > com.txt[30m(B[m[5Ccat[90m result.txt | grep "comsumer" > com.txt[30m(B[m[5C [90mresult.txt | grep "comsumer" > com.txt[30m(B[m[6Cc[K[7C[90mom.txt[30m(B[m[7C[36m[4mc[90m[24mom.txt[30m(B[m[7C[36m[4mo[90m[24mm.txt[30m(B[m[8C[36m[4mm[90m[24m.txt[30m(B[m[9Ccat com.txt[13C[13C[11Dcat [36m[4mcom.txt[30m(B[m[13C[13C
+[30m(B[m]133;C;cmdline_url=cat%20com.txt[?2004l[>4;0m[=0u>]0;[kotori] cat com.txt ~/g/m/O/p/result[30m(B[m[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat b
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat b
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat a
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat c
+[comsumer] eat d
+[comsumer] eat c
+[comsumer] eat b
+[comsumer] eat a
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[90mat com.txt[30m(B[m[3C[91mc[90mat com.txt[30m(B[m[3C[91ma[90mt com.txt[30m(B[m[4C[91mt[90m com.txt[30m(B[m[5Ccat[90m com.txt[30m(B[m[5C [90mcom.txt[30m(B[m[6Cp[K[7C[90mro.txt[30m(B[m[7C[36m[4mp[90m[24mro.txt[30m(B[m[7C[36m[4mr[90m[24mo.txt[30m(B[m[8C[36m[4mo[90m[24m.txt[30m(B[m[9Ccat pro.txt[13C[13C[11Dcat [36m[4mpro.txt[30m(B[m[13C[13C
+[30m(B[m]133;C;cmdline_url=cat%20pro.txt[?2004l[>4;0m[=0u>]0;[kotori] cat pro.txt ~/g/m/O/p/result[30m(B[m[producer] put c
+[producer] put a
+[producer] put c
+[producer] put d
+[producer] put a
+[producer] put c
+[producer] put a
+[producer] put c
+[producer] put a
+[producer] put d
+[producer] put b
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put c
+[producer] put b
+[producer] put d
+[producer] put c
+[producer] put a
+[producer] put d
+[producer] put a
+[producer] put b
+[producer] put c
+[producer] put d
+[producer] put a
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put d
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put d
+[producer] put b
+[producer] put d
+[producer] put a
+[producer] put b
+[producer] put d
+[producer] put b
+[producer] put d
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put d
+[producer] put b
+[producer] put a
+[producer] put c
+[producer] put d
+[producer] put b
+[producer] put a
+[producer] put d
+[producer] put b
+[producer] put c
+[producer] put d
+[producer] put a
+[producer] put b
+[producer] put c
+[producer] put d
+[producer] put a
+[producer] put c
+[producer] put d
+[producer] put b
+[producer] put b
+[producer] put c
+[producer] put a
+[producer] put c
+[producer] put a
+[producer] put d
+[producer] put b
+[producer] put c
+[producer] put a
+[producer] put d
+[producer] put c
+[producer] put a
+[producer] put d
+[producer] put c
+[producer] put c
+[producer] put d
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put c
+[producer] put b
+[producer] put a
+[producer] put b
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/p/result[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com/result[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=c[3C[91mc[30m(B[m[3C[90mat pro.txt[30m(B[m[3C[91md[30m(B[m[K[4Ccd[4C[90m ..[30m(B[m[4C [90m..[30m(B[m[5C.[90m.[30m(B[m[6C[36m[4m.[90m[24m.[30m(B[m[6C[36m[4m.[30m(B[m[7C[7C[7C
+[30m(B[m]133;C;cmdline_url=cd%20..[?2004l[>4;0m[=0u>]0;[kotori] cd .. ~/g/m/O/p/result[30m(B[m]7;file://kotori/home/kktori/gitrep/myself/OSlearning/pro_com]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/pro_com[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=l[3C[90ms[30m(B[m[3C[91ml[90ms[30m(B[m[3C[91ms[30m(B[m[4C[4Cls[4C[4C
+[30m(B[m]133;C;cmdline_url=ls[?2004l[>4;0m[=0u>]0;[kotori] ls ~/g/m/O/pro_com[30m(B[m[0m[01;34mbin[0m/  [01;32mclear.sh[0m*  output.session  [01;34mresrc[0m/  [01;34mresult[0m/  [01;32mrun.sh[0m*  timing.log
+]133;D;0[?25h[2m⏎(B[m                                                                                                                            ⏎ [K]0;[kotori] ~/g/m/O/pro_com[30m(B[m[K]133;A;special_key=1[92mkktori(B[m@[33mkotori(B[m [32m~/gitrep/myself/OSlearning/pro_com[95m (master)(B[m 
+[92m❯ (B[m[K[C[C[?2004h[>4;1m[=5u=e[3C[90mxit[30m(B[m[3C[91me[90mxit[30m(B[m[3C[91mx[90mit[30m(B[m[4Cex[90mit[30m(B[m[4Ci[90mt[30m(B[m[5C[91mexi[90mt[30m(B[m[5C[91mt[30m(B[m[6C[6Cexit[6C[6C
+[30m(B[m]133;C;cmdline_url=exit[?2004l[>4;0m[=0u>]0;[kotori] exit ~/g/m/O/pro_com[30m(B[m]133;D;0[?25h[30m(B[m
+Script done on 2025-12-26 15:32:07+08:00 [COMMAND_EXIT_CODE="0"]
